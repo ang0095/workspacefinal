@@ -11,18 +11,27 @@ export class ScheduleDetailsComponent implements OnInit {
   schedules:any[];
   packageOptions:any[];
   statusOptions:any[];
-
   scheduleId:number;
   statusId:number;
 
-  sampleSchedule:{id:1, statusId:1};
+
+  sample :{id:1, statusId:1}
+
+  sampleSchedule:{id:1}
+
 
   constructor(private s:ScheduleService) { }
 
-  updateStatus()
+  updateStatus(sample)
   {
-    this.s.updateSchedule(this.scheduleId, this.statusId)
+    this.s.updateSchedule(this.scheduleId, this.statusId).subscribe(r =>this.statusId = 1 )
   }
+
+
+  // deleteSchedule(sampleSchedule)
+  // {
+  //  this.s.deleteSchedule(this.scheduleId).subscribe(res=> schedule)
+  // }
 
 
   ngOnInit(): void {
