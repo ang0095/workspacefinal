@@ -13,32 +13,32 @@ export class ScheduleService {
  
   httpOptions = { headers: new HttpHeaders({ 'Content-type': 'application/json' }) }
 
-  getPackages()
+  getPackages(): Observable<any[]>
   {
     return this.httpclient.get<any>(`${ScheduleService['apiBaseUrl']}/laundry/packages`)
   }
 
-  getStatuses()
+  getStatuses(): Observable<any[]>
   {
     return this.httpclient.get<any>(`${ScheduleService['apiBaseUrl']}/laundry/status`)
 
   }
 
-  getSchedules()
+  getSchedules(): Observable<any[]>
   {
     return this.httpclient.get<any>(`${ScheduleService['apiBaseUrl']}/laundry/schedules`)
 
   }
 
-  createSchedule(scheduleData:any)
+  createSchedule(scheduleData:any): Observable<any[]>
   {
-    return this.httpclient.get<any>(`${ScheduleService['apiBaseUrl']}/laundry/schedule/add`)
+    return this.httpclient.post<any>(`${ScheduleService['apiBaseUrl']}/laundry/schedule/add`, scheduleData, this.httpOptions)
 
   }
 
-  updateSchedule(scheduleId:number, statusId:number)
+  updateSchedule(scheduleId:number, statusId:number): Observable<any[]>
   {
-    return this.httpclient.get<any>(`${ScheduleService['apiBaseUrl']}/laundry/schedule/update/${scheduleId}/${statusId}`)
+    return this.httpclient.put<any>(`${ScheduleService['apiBaseUrl']}/laundry/schedule/update/${scheduleId}/${statusId}`, scheduleId+statusId, this.httpOptions)
 
   }
   
