@@ -1,0 +1,216 @@
+/* Commands
+~~~~~~~~
+npx ng g interface models/players --type=model  (creates players.model.ts file in app folder)
+npx ng g interface ../models/players --type=model  (creates players.model.ts file in src folder)
+npx install bootstrap@latest
+
+Navbar html file
+~~~~~~~~~~~~~~~~
+
+<div class="row">
+    <div class="col-8">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Player</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a id="nav-link" class = "nav-link"  routerLink="/schedule-form">Register</a>
+                <a id="nav-link" class = "nav-link" routerLink="/schedule-details">Login</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    </div>
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Service.ts file
+~~~~~~~~~~~~~~~
+
+
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UserSchedule } from 'src/models/user-schedule.model';
+ 
+@Injectable({
+  providedIn: 'root'
+})
+export class ScheduleService {
+ 
+  public apiBaseurl = "https://8080-cabbaacddbbb307795438daadeafcadfone.premiumproject.examly.io/api"
+
+  constructor(private httpclient: HttpClient) { }
+ 
+  httpOptions = { headers: new HttpHeaders({ 'Content-type': 'application/json' }) }
+ 
+  getPackages(): Observable<any>
+  {
+    return this.httpclient.get<any>(`${ScheduleService['apiBaseUrl']}/laundry/packages`)
+  }
+  getStatuses():Observable<any>
+  {
+    return this.httpclient.get<any>(`${ScheduleService['apiBaseUrl']}/laundry/status`)
+  }
+  getSchedules():Observable<any>
+  {
+    return this.httpclient.get<any>(`${ScheduleService['apiBaseUrl']}/laundry/schedules`)
+  }
+ 
+  createSchedule(scheduledata:any):Observable<any>
+  {
+    return this.httpclient.post<any>(`${ScheduleService['apiBaseUrl']}/laundry/schedule/add`,scheduledata, this.httpOptions)
+  }
+ 
+  updateSchedule(scheduleId:number,statusId:number):Observable<UserSchedule>
+  {
+    return this.httpclient.put<UserSchedule>(`${ScheduleService['apiBaseUrl']}/laundry/schedule/update/${scheduleId}/${statusId}`,this.httpOptions)
+  }    
+ 
+  deleteSchedule(scheduleId:number):Observable<any>
+  {
+    return this.httpclient.delete<UserSchedule>(`${ScheduleService['apiBaseUrl']}/laundry/schedule/delete/${scheduleId}`)
+  }
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+reactive html
+~~~~~~~~~~~~~~~~~~~~~~~
+
+<div>
+  <form [formGroup]="demoForm"  (ngSubmit)='display()'>
+  <div>
+    <p>Email</p>
+    <input [formControl]="email" type="text" formControlName="email">
+   <div *ngIf="demoForm.get('email').hasError('email') ">
+    Email not in correct format 
+   </div>
+  </div>
+    <div>
+      <p>Name</p>
+      <input  type="text" formControlName="password">
+         <div *ngIf="demoForm.controls['password'].hasError('required') && !demoForm.get('password').pristine">
+     Required
+         </div>
+     </div>
+      <div>
+      <p>Select Continent</p>
+
+        <select formControlName="opt">
+          <option>Demo-1</option>
+          <option>Demo-2</option>
+          <option>Demo-3</option>
+        </select>
+      </div>
+      <div>
+       User
+        <input type="radio" name="user" id="rdoo2"  value="user" formControlName="user">
+        Admin
+        <input type="radio" name="user" id="rdoo1" value="admin" formControlName="user">
+        Friend
+        <input type="radio" name="user" id="rdoo3" value="friend" formControlName="user">
+      </div>
+      <div>
+        Male
+         <input type="radio" name="gender" id="rdoo2"  value="Male" formControlName="gender">
+         Female
+         <input type="radio" name="gender" id="rdoo1" value="Female" formControlName="gender">
+        
+       </div>
+      <div>
+        Agree
+        <input type="checkbox" name="chk1" id="chkOne" value="Male" formControlName="chkValue">
+       
+
+      </div>
+      <div>
+        Date
+              <input type="date" formControlName="startDate" name="startDate" />
+            </div>
+
+              <div>
+        <button type="submit" [disabled]="demoForm.invalid">Save</button>
+        <button type="button" (click)="reset()">Reset</button>
+      </div>
+  </form>
+
+<!-- <form [formGroup]="form" (ngSubmit)='savedata()'> 
+  <div>
+   <input [formControl]="email" name="emailtxt" type="text" >
+  </div>
+  <div>
+    <input [formControl]="password"  name="passTxt" type="text">
+  </div>
+   <button type="submit">Save</button>
+</form> -->
+
+</div>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+reactive ts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+import { ThrowStmt } from "@angular/compiler";
+import { Component } from "@angular/core";
+import { EmailValidator, FormBuilder, ReactiveFormsModule, Validators,RequiredValidator } from '@angular/forms';
+import {FormArray, FormControl, FormGroup, Validator} from '@angular/forms';
+
+@Component({
+    selector:'reactiveForm',
+    templateUrl:'reactiveForm.component.html'
+})
+export class ReactiveForm
+{
+   error:string = "";
+   demoForm:any;
+   constructor(private formBuilder:FormBuilder){
+    this.demoForm = this.formBuilder.group({
+      email:['',Validators.email],
+      password:['',Validators.required],
+      opt:['Select',Validators.required],
+      gender:['',Validators.required],
+      user:['',Validators.required],
+      chkValue:[false],
+      startDate:['',Validators.required]
+
+
+    })
+   }
+  
+   display(){
+      console.log(this.demoForm.value);
+      this.demoForm.get('user').errors;
+      console.log(this.demoForm.valid);
+   }
+   reset(){
+      this.demoForm.reset();
+   }
+   // if(this.form.get('email').hasError('required'))
+   // {
+   //    this.error ="Email is required";
+   // }
+   // console.log(this.form.invalid);
+   // }
+   //    //console.log(this.form.get('email').hasError('required'));
+     
+   // }
+
+
+     //console.log(userData.controls.email.value);
+   
+}
+
+
+
+ */
