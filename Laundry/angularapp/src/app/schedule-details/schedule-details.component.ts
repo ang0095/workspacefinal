@@ -18,7 +18,8 @@ export class ScheduleDetailsComponent implements OnInit {
   ngOnInit(): void {
 
     this.s.getSchedules().subscribe(r => this.schedules=r)
-    this.s.get
+    this.s.getPackages().subscribe(r=>this.packageOptions=r)
+    this.s.getStatuses().subscribe(r=>this.statusOptions=r)
 
     
    
