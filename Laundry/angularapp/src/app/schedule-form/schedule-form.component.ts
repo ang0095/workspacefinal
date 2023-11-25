@@ -35,7 +35,9 @@ export class ScheduleFormComponent implements OnInit {
 
   }
 
-  
+  loadpkg():void{
+    this.ss.getPackages().subscribe((data)=>this.items=data)
+  }
     
   
   }
