@@ -13,7 +13,10 @@ export class ScheduleDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     
+    getPackageName(packageId:number)
+    {
     
+    }
   }
 
   
