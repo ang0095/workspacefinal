@@ -12,7 +12,7 @@ export class ScheduleFormComponent implements OnInit {
 
   constructor(private fb:FormBuilder,private ss:ScheduleService) 
   { 
-    
+
   }
   
   
@@ -23,10 +23,10 @@ export class ScheduleFormComponent implements OnInit {
   {
 
   }
-
+    
   
   }
-}
+
 
  
 
