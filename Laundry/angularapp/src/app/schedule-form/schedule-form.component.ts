@@ -81,9 +81,8 @@ export class ScheduleFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  loadpkg():void{
-    this.ss.getPackages().subscribe((data)=>this.items=data)
+  
   }
-}
+
  
 

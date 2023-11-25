@@ -12,5 +12,5 @@ export class Userschedule {
     pickTinmeSlot : string
     packageId : number
     statusId : number
-    espectedDeliveryDate? : Date;
+    expectedDeliveryDate? : Date;
 }
