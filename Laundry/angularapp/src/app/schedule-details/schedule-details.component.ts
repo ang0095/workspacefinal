@@ -12,7 +12,17 @@ export class ScheduleDetailsComponent implements OnInit {
   packageOptions:any[];
   statusOptions:any[];
 
+  scheduleId:number;
+  statusId:number;
+
+  sampleSchedule:{id:1, statusId:1};
+
   constructor(private s:ScheduleService) { }
+
+  updateStatus()
+  {
+    this.s.updateSchedule(this.scheduleId, this.statusId)
+  }
 
 
   ngOnInit(): void {
