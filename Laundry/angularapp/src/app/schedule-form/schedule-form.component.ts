@@ -14,7 +14,7 @@ export class ScheduleFormComponent implements OnInit {
   { 
 
   }
-  
+  scheduleForm:any;
   
   onSubmit(){
   }
