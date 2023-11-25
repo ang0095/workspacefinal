@@ -10,13 +10,14 @@ import { ScheduleService } from '../services/schedule-service.service';
 export class ScheduleFormComponent implements OnInit {
  items:any[]
 
-  constructor() 
+  constructor(private fb:FormBuilder,private ss:ScheduleService) 
   { 
 
   }
   scheduleForm:any;
   
   onSubmit(){
+    
   }
  
   ngOnInit(): void 
