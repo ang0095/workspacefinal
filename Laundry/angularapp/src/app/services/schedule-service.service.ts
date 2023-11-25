@@ -32,13 +32,13 @@ export class ScheduleService {
 
   createSchedule(scheduleData:any)
   {
-    return this.httpclient.post<any>(`${ScheduleService['apiBaseUrl']}/laundry/schedule/add`)
+    return this.httpclient.get<any>(`${ScheduleService['apiBaseUrl']}/laundry/schedule/add`)
 
   }
 
   updateSchedule(scheduleId:number, statusId:number)
   {
-    return this.httpclient.put<any>(`${ScheduleService['apiBaseUrl']}/laundry/schedule/update/${scheduleId}/${statusId}`)
+    return this.httpclient.get<any>(`${ScheduleService['apiBaseUrl']}/laundry/schedule/update/${scheduleId}/${statusId}`)
 
   }
   
