@@ -10,7 +10,7 @@ import { ScheduleService } from '../services/schedule-service.service';
 export class ScheduleFormComponent implements OnInit {
  items:any[]
 
-  constructor(private fb:FormBuilder,private ss:ScheduleService) 
+  constructor() 
   { 
 
   }

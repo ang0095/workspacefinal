@@ -42,5 +42,10 @@ export class ScheduleService {
 
   }
   
+  deleteSchedule(scheduleId:number)
+  {
+    return this.httpclient.delete<any>(`${ScheduleService['apiBaseUrl']}/laundry/schedule/delete/${scheduleId}`,this.httpOptions)
+
+  }
 
 }
