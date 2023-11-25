@@ -8,15 +8,13 @@ import { ScheduleService } from '../services/schedule-service.service';
 })
 export class ScheduleDetailsComponent implements OnInit {
   
+  
 
   constructor(private s:ScheduleService) { }
 
   ngOnInit(): void {
     
-    getPackageName(packageId:number)
-    {
-    
-    }
+   
   }
 
   

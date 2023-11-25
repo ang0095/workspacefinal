@@ -35,7 +35,7 @@ describe('ScheduleDetailsComponent', () => {
       ]),
       ['getStatuses']: () => of([
         // Define sample status options here for your test
-        { id: 1, name: 'Status A' },
+        { id: 1, name: 'Status A' },  
         { id: 2, name: 'Status B' },
       ]),
       ['updateSchedule']: () => of({ message: 'Status updated successfully' }),
