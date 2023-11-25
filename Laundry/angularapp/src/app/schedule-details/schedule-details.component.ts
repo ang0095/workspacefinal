@@ -11,6 +11,7 @@ export class ScheduleDetailsComponent implements OnInit {
   
 
   constructor(private s:ScheduleService) { }
+  
 
   ngOnInit(): void {
     
