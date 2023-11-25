@@ -15,7 +15,15 @@ export class ScheduleFormComponent implements OnInit {
 
   }
   scheduleForm=this.fb.group({
-      fullName:['']
+      fullName:[''],
+      mobileNumber:[''],
+      email:[''],
+      address:[''],
+      area:[''],
+      pincode:[''],
+      pickupDay:[''],
+      pickupTimeSlot:[''],
+      packageId:['']
   })
   
   onSubmit(){
@@ -26,6 +34,8 @@ export class ScheduleFormComponent implements OnInit {
   {
 
   }
+
+  
     
   
   }
