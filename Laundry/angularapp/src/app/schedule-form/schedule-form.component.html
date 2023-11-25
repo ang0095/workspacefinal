@@ -1,5 +1,5 @@
 <h2>Schedule Pick-Up</h2>
-         <form [formGroup]="scheduleForm" >
+         <form [formGroup]="scheduleForm" (ngSubmit)="onSubmit()">
 
             <input type="text" required class="form-control">
             <input type="text" required class="form-control">
