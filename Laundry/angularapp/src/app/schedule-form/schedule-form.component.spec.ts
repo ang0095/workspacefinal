@@ -69,7 +69,7 @@ describe('ScheduleFormComponent', () => {
     const submitButton = fixture.debugElement.query(By.css('button[type="submit"]'));
     submitButton['nativeElement'].click();
 
-    fixture.detectChanges(); // Update the view after form submission
+    fixture.detectChanges(); // Update the view after form submission     
 
     expect(component['onSubmit']).toHaveBeenCalled();
     // Add additional expectations based on your specific logic after form submission

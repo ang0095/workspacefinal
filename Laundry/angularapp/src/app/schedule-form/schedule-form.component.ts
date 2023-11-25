@@ -14,10 +14,12 @@ export class ScheduleFormComponent implements OnInit {
   { 
 
   }
-  scheduleForm:any;
+  scheduleForm=this.fb.group({
+      fullName:['']
+  })
   
   onSubmit(){
-    
+
   }
  
   ngOnInit(): void 
