@@ -1,0 +1,20 @@
+<h3>Create Player</h3>
+<form (ngSubmit)="onSubmit()" [formGroup]="createForm">
+    <label for="shirtno">Shirt No:</label>
+    <input id="shirtno" type="text" formControlName="shirtno" required>
+
+    <label for="name">Name:</label>
+    <input id="name" type="text" formControlName="name" required>
+
+    <label for="positionid">Position:</label>
+    <select id="positionid" formControlName="positionid">
+    </select>
+
+    <label for="appearances">Appearances:</label>
+    <input id="appearances" formControlName="appearances" type="text">
+
+    <label for="goals">Goals:</label>
+    <input id="goals" formControlName="goals" type="text">
+
+    <button type="submit" [disabled]="createForm.invalid">Create</button>
+</form>
