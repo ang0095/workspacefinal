@@ -9,7 +9,7 @@ import { PlayersService } from 'src/app/services/players.service';
 })
 export class DetailsComponent implements OnInit {
 
-  playerData = {
+  player = {
     id: 1,
     name: 'Test Player',
     shirtno: 10,
@@ -22,7 +22,7 @@ export class DetailsComponent implements OnInit {
   id:number
   
   ngOnInit(): void {
-    
+
       
   }
 
