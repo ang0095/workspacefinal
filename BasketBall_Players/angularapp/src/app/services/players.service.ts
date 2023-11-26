@@ -7,15 +7,21 @@ import { Observable, scheduled } from 'rxjs';
 })
 export class PlayersService {
 
-  public apiBaseurl = "https://8080-cabbaacddbbb307795438daadeafcadfone.premiumproject.examly.io/api"
+  public apiURL = "https://8080-cabbaacddbbb307795438daadeafcadfone.premiumproject.examly.io/api"
 
   constructor(private httpclient: HttpClient) { }
  
   httpOptions = { headers: new HttpHeaders({ 'Content-type': 'application/json' }) }
+   getPlayer:any;
 
-  getplayers(): Observable<any[]>
+//    getPlayers():Observable<any[]>
+// {
+//   return this.httpclient.get<any[]>(this.apiURL+"/players")
+// }
+
+  getPlayers(): Observable<any[]>
   {
-    return this.httpclient.get<any>(`${PlayersService['apiURL']} + /players`)
+    return this.httpclient.get<any>(`${PlayersService['apiURL']} + "players"`)
   }
 
   // getStatuses(): Observable<any[]>
