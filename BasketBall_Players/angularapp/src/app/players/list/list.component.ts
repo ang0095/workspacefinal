@@ -17,7 +17,7 @@ export class ListComponent implements OnInit {
   }
   ngOnInit(): void {
 
-    // this.palayerservice.getPlayers().subscribe(data=>{this.players.push(...data)})
+    this.palayerservice.getPlayers().subscribe(data=>{this.players.push(...data)})
 
   }
 
