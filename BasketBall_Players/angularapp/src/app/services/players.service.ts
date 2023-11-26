@@ -13,11 +13,17 @@ export class PlayersService {
  
   httpOptions = { headers: new HttpHeaders({ 'Content-type': 'application/json' }) }
   getPlayer:any;
- 
   getPlayers(): Observable<any>
   {
     return this.httpclient.get<any>(`${PlayersService['apiBaseUrl']}/players`)
   }
+
+  // getPlayer(): Observable<any>
+  // {
+  //   return this.httpclient.get<any>(`${PlayersService['apiBaseUrl']}/players`)
+  // }
+
+  
   // getStatuses():Observable<any>
   // {
   //   return this.httpclient.get<any>(`${ScheduleService['apiBaseUrl']}/laundry/status`)

@@ -8,7 +8,8 @@ import { PlayersService } from 'src/app/services/players.service';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  player = {
+
+  playerData = {
     id: 1,
     name: 'Test Player',
     shirtno: 10,
@@ -16,12 +17,13 @@ export class DetailsComponent implements OnInit {
     appearances: 20,
     goals: 10
   };
+  
   constructor(private ps:PlayersService,private ar:ActivatedRoute) { }
   id:number
   
   ngOnInit(): void {
-    this.id=1  
-    this.ps.getPlayer(this.id).subscribe(data=>{this.player=data})  
+    
+      
   }
 
 }
