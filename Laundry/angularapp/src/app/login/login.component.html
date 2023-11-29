@@ -10,12 +10,12 @@
                 <form [formGroup]="scheduleForm" (ngSubmit)="onSubmit()">
                     
                         <div class="form-group">
-                          <label for="userId" style="color: white">Email address</label>
-                          <input [formControlName]="userId" type="email" style="border-radius: 13px;" class="form-control" id="userId" aria-describedby="emailHelp" placeholder="Enter email" required>
+                          <label for="userId" style="color: white">User Id</label>
+                          <input formControlName="userId" type="email" style="border-radius: 13px;" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
                         </div>
                         <div class="form-group">
                           <label for="password" style="color: white;">Password</label>
-                          <input [formControlName]="password" type="password" style="border-radius: 13px;" class="form-control" id="password" placeholder="Password" required>
+                          <input formControlName="password" type="password" style="border-radius: 13px;" class="form-control" placeholder="Password">
                         </div>
                         <br>
                         

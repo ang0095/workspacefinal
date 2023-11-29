@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { EmailValidator, FormBuilder, ReactiveFormsModule, Validators,RequiredValidator } from '@angular/forms';
 import {FormArray, FormControl, FormGroup, Validator} from '@angular/forms';
+import { LoginService } from '../capstoneservice/login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,22 +12,20 @@ import {FormArray, FormControl, FormGroup, Validator} from '@angular/forms';
 export class LoginComponent implements OnInit {
   scheduleForm:any;
   schedules:any;
-  constructor(private fb:FormBuilder, private http:HttpClient) 
+  constructor(private fb:FormBuilder, private http:LoginService) 
   { 
     this.scheduleForm = this.fb.group({
-      email:['Email is required',Validators.email],
-      password:['Password is required',Validators.required]
+      userId:['',Validators.required],
+      password:['',Validators.required]
 
     })
   }
 
-  getCourses()
-  {
-    
-  }
+  
   onSubmit()
   {
     this.http.getCourses().subscribe(r => this.schedules=r);
+    console.log("success");
 
   }
 
@@ -36,3 +35,4 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
