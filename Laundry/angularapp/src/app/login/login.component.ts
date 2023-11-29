@@ -13,14 +13,14 @@ export class LoginComponent implements OnInit {
   constructor(private fb:FormBuilder, private http:HttpClient) 
   { 
     this.scheduleForm = this.fb.group({
-      email:['',Validators.email],
-      password:['',Validators.required]
+      email:['Email is required',Validators.email],
+      password:['Password is required',Validators.required]
 
     })
   }
   onSubmit()
   {
-  
+    // this.http.get()
   }
 
   ngOnInit(): void {
