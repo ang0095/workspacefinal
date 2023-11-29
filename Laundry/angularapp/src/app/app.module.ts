@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { ScheduleDetailsComponent } from './schedule-details/schedule-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { StudentComponent } from './student/student.component';
 import { OfficeStaffComponent } from './office-staff/office-staff.component';
@@ -31,7 +31,8 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
