@@ -10,6 +10,7 @@ import {FormArray, FormControl, FormGroup, Validator} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   scheduleForm:any;
+  schedules:any;
   constructor(private fb:FormBuilder, private http:HttpClient) 
   { 
     this.scheduleForm = this.fb.group({
@@ -18,9 +19,15 @@ export class LoginComponent implements OnInit {
 
     })
   }
+
+  getCourses()
+  {
+    
+  }
   onSubmit()
   {
-    // this.http.get()
+    this.http.getCourses().subscribe(r => this.schedules=r);
+
   }
 
   ngOnInit(): void {
