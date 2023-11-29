@@ -23,7 +23,7 @@ import { RouterModule } from '@angular/router';
     StudentComponent,
     OfficeStaffComponent,
     LoginComponent,
-    RegisterComponent,
+    RegisterComponent
 
   ],
   imports: [
