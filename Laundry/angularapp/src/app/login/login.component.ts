@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
   
   onSubmit()
   {
-    this.http.getCourses().subscribe(r => this.schedules=r);
+    this.http.getCourses()
+    .subscribe(r => this.schedules=r);
     console.log("success");
 
   }
