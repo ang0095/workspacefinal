@@ -5,42 +5,60 @@
                 <div class="card">
                     <div class="text-center">
                         <h1 style="color: black;">Registration</h1>
-                        <h6 style="color: #2D9596;">Register to Login in account</h6>
+                        <h6 style="color: #2D9596;">Register to Login into new account</h6>
                     </div>
     
-                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
                         
                             <div class="form-group">
-                              <label for="userId" style="color: black">Username</label>
-                              <input formControlName="userId" type="email" style="border-radius: 13px;" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                              <label for="userName" style="color: black">Username</label>
+                              <input formControlName="userName" type="text" style="border-radius: 13px;" class="form-control" aria-describedby="emailHelp" placeholder="Enter Username">
                             </div>
+                            <small *ngIf="registerForm.controls['userName'].dirty && registerForm.hasError('required', 'userName')" class="text-danger">*Username is required</small>
+    
+                            
                             <div class="form-group">
-                              <label for="password" style="color: black;">Email</label>
-                              <input formControlName="password" type="password" style="border-radius: 13px;" class="form-control" placeholder="Password">
+                              <label for="email" style="color: black;">Email</label>
+                              <input formControlName="email" type="email" style="border-radius: 13px;" class="form-control" placeholder="Enter Email">
                             </div>
-                            <br>
+                            <small *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('email', 'email')" class="text-danger">*Enter a valid email</small>
+    
+                            
                             <div class="form-group">
                                 <label for="password" style="color: black;">Password</label>
-                                <input formControlName="password" type="password" style="border-radius: 13px;" class="form-control" placeholder="Password">
+                                <input formControlName="password" type="text" style="border-radius: 13px;" class="form-control" placeholder="Enter Password">
                               </div>
-                              <br>
-                            
+                              <small *ngIf="registerForm.controls['password'].dirty && registerForm.hasError('required', 'password')" class="text-danger">*Password is required</small>
+    
+                              
+    <!--                         
                               <div class="form-group">
-                                <label for="password" style="color: black;">Confirm Password</label>
-                                <input formControlName="password" type="password" style="border-radius: 13px;" class="form-control" placeholder="Password">
+                                <label for="email" style="color: black;">Confirm Password</label>
+                                <input formControlName="password" type="text" style="border-radius: 13px;" class="form-control" >
+                              </div> -->
+                              
+    
+                              <!-- <div class="form-group">
+                                <label for="mobileNumber" style="color: black;">Mobile Number</label>
+                                <input formControlName="mobileNumber" type="text" style="border-radius: 13px;" class="form-control" placeholder="10 digit number">
                               </div>
-                              <br>
-
+                              <small *ngIf="registerForm.controls['mobileNumber'].dirty && registerForm.hasError('required', 'mobileNumber')" class="text-danger">*Mobile Number is required</small> -->
+    
+                              
                               <div class="form-group">
-                                <label for="password" style="color: black;">Confirm Password</label>
-                                <input formControlName="password" type="password" style="border-radius: 13px;" class="form-control" placeholder="Password">
+                                <label for="role" style="color: black;">Role</label>
+                                <input formControlName="role" type="text" style="border-radius: 13px;" class="form-control" >
                               </div>
-                              <br>
+                              <small *ngIf="registerForm.controls['role'].dirty && registerForm.hasError('required', 'role')" class="text-danger">*Role is required</small>
+    
+                              
                             <!-- <button type="submit" class="btn btn-success">Login</button> -->
-                            <button  type="submit" class="button-87" role="button">Login</button>
-                            <br>
-                            <p style="color: black;">Dont have an account ?
-                                <a href="">Signup</a>
+                            <button  type="submit" class="button-87" role="button">Register</button>
+                            
+                            <p style="color: black;">Already have an account
+                                <a [routerLink]="['/login']">
+                                    Login
+                                </a>
                             
                             </p>
                           
@@ -51,3 +69,5 @@
         </div>
     </div>
 </div>
+
+

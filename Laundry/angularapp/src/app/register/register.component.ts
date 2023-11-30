@@ -11,28 +11,49 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registerForm:any;
+  registerForm:FormGroup;
   registers:any;
 
   constructor(private fb:FormBuilder, private http:LoginService, private routes:Router) 
   { 
     this.registerForm = this.fb.group({
       userName:['',Validators.required],
-      email:['',Validators.required],
+      email:['',Validators.email],
       password:['',Validators.required],
-      mobileNumber:['',Validators.required],
+      // mobileNumber:['',Validators.required],
       role:['',Validators.required]
 
     })
 
-    onSubmit()
+  }
+
+  onRegister()
   {
-    // this.http.getCourses().subscribe(r => this.registers=r);
-    console.log("success");
-    this.routes.navigate(['/login']);
+    if(this.registerForm.valid)
+    {
+      console.log("success");
+      this.http.register(this.registerForm.value)
+      .subscribe({
+        next:(res =>{
+          alert(res.message)
+          this.registerForm.reset();
+          this.routes.navigate(['login']);
+        }),
+        error:(err =>{
+          alert(err?.error.message)
+        })
+      })
+      // this.http.getCourses().subscribe(r => this.registers=r);
+
+
+    }
+    else 
+    {
+      // throw exception?
+    }
+    
     
 
-  }
   }
 
 
