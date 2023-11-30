@@ -4,8 +4,8 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="text-center">
-                        <h1 style="color: black;">Regist</h1>
-                        <h6 style="color: #2D9596;">Login to View the Course Details</h6>
+                        <h1 style="color: black;">Registration</h1>
+                        <h6 style="color: #2D9596;">Register to Login in account</h6>
                     </div>
     
                     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
@@ -19,6 +19,11 @@
                               <input formControlName="password" type="password" style="border-radius: 13px;" class="form-control" placeholder="Password">
                             </div>
                             <br>
+                            <div class="form-group">
+                                <label for="password" style="color: black;">Password</label>
+                                <input formControlName="password" type="password" style="border-radius: 13px;" class="form-control" placeholder="Password">
+                              </div>
+                              <br>
                             
                             <!-- <button type="submit" class="btn btn-success">Login</button> -->
                             <button  type="submit" class="button-87" role="button">Login</button>
