@@ -1,40 +1,40 @@
-<!-- <div id="container">
+<div id="container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="text-center">
+                        <h1 style="color: black;">Login</h1>
+                        <h6 style="color: #2D9596;">Login to View the Course Details</h6>
+                    </div>
     
-</div> -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="text-center">
-                    <h1 style="color: black;">Login</h1>
-                    <h6 style="color: #2D9596;">Login to View the Course Details</h6>
-                </div>
-
-                <form [formGroup]="loginForm" >
+                    <form [formGroup]="loginForm" >
+                        
+                            <div class="form-group">
+                              <label for="email" style="color: black">Email</label>
+                              <input formControlName="email" type="email" style="border-radius: 13px;" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <small *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('email', 'email')" class="text-danger">* Enter valid Email</small>
+                            <div class="form-group">
+                              <label for="password" style="color: black;">Password</label>
+                              <input formControlName="password" type="password" style="border-radius: 13px;" class="form-control" placeholder="Password">
+                            </div>
+                            <small *ngIf="loginForm.controls['password'].dirty  && loginForm.hasError('required', 'password')" class="text-danger">*Password is required</small>
+                            <br>
+                            
+                            <button [disabled]="loginForm.invalid"  type="submit" (click)="onLogin()" class="btn btn-success">Login</button>
+                            <!-- <button [disabled]="loginForm.invalid" type="submit" class="button-87" role="button">Login</button> -->
+                            <br>
+                            <p style="color: black;">Dont have an account ?
+                                <a routerLink = "/register">Signup</a>
+                            
+                            </p>
+                          
+                    </form>
                     
-                        <div class="form-group">
-                          <label for="email" style="color: black">Email</label>
-                          <input formControlName="email" type="email" style="border-radius: 13px;" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
-                        </div>
-                        <small *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('email', 'email')" class="text-danger">* Enter valid Email</small>
-                        <div class="form-group">
-                          <label for="password" style="color: black;">Password</label>
-                          <input formControlName="password" type="password" style="border-radius: 13px;" class="form-control" placeholder="Password">
-                        </div>
-                        <small *ngIf="loginForm.controls['password'].dirty  && loginForm.hasError('required', 'password')" class="text-danger">*Password is required</small>
-                        <br>
-                        
-                        <button [disabled]="loginForm.invalid"  type="submit" (click)="onLogin()" class="btn btn-success">Login</button>
-                        <!-- <button [disabled]="loginForm.invalid" type="submit" class="button-87" role="button">Login</button> -->
-                        <br>
-                        <p style="color: black;">Dont have an account ?
-                            <a routerLink = "/register">Signup</a>
-                        
-                        </p>
-                      
-                </form>
-                
+                </div>
             </div>
         </div>
     </div>
 </div>
+
