@@ -27,6 +27,7 @@
                             <div class="form-group">
                                 <label for="password" style="color: black;">Password</label>
                                 <input formControlName="password" type="text" style="border-radius: 13px;" class="form-control" placeholder="Enter Password">
+                                
                               </div>
                               <small *ngIf="registerForm.controls['password'].dirty && registerForm.hasError('required', 'password')" class="text-danger">*Password is required</small>
     
