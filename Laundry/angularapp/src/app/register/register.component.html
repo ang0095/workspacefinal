@@ -1,36 +1,37 @@
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="text-center">
-                    <h1>Register</h1>
-                    <h6>Thank you for using our service</h6>
-                </div>
-
-                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-
-
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Email address</label>
-                          <input type="email" class="form-control" id="userId" aria-describedby="emailHelp" placeholder="Enter email" required>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
-                        </div>
-                        <br>
+<div id="container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="text-center">
+                        <h1 style="color: black;">Regist</h1>
+                        <h6 style="color: #2D9596;">Login to View the Course Details</h6>
+                    </div>
+    
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                         
-                        <button type="submit" class="btn btn-success">Login</button>
-
-                        <br>
-                        <p>New User? Click 
-                            <a href="">here</a>
-                            to Register!
-                        </p>
-                      
-                </form>
-                
+                            <div class="form-group">
+                              <label for="userId" style="color: black">User Id</label>
+                              <input formControlName="userId" type="email" style="border-radius: 13px;" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                              <label for="password" style="color: black;">Password</label>
+                              <input formControlName="password" type="password" style="border-radius: 13px;" class="form-control" placeholder="Password">
+                            </div>
+                            <br>
+                            
+                            <!-- <button type="submit" class="btn btn-success">Login</button> -->
+                            <button  type="submit" class="button-87" role="button">Login</button>
+                            <br>
+                            <p style="color: black;">Dont have an account ?
+                                <a href="">Signup</a>
+                            
+                            </p>
+                          
+                    </form>
+                    
+                </div>
             </div>
         </div>
     </div>
-</div> -->
+</div>
