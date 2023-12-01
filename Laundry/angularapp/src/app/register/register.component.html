@@ -24,7 +24,7 @@
                             <small *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('email', 'email')" class="text-danger">*Enter a valid email</small>
     
                             
-                            <div class="form-group">
+                            <div class="form-group"> 
                               
                                 <label for="password" style="color: black;">Password</label>
                                 <input formControlName="password" type="text" style="border-radius: 13px;" class="form-control" placeholder="Enter Password">
@@ -50,9 +50,14 @@
                               
                               <div class="form-group">
                                 <label for="role" style="color: black;">Role</label>
-                                <input formControlName="role" type="text" style="border-radius: 13px;" class="form-control" >
+                                <!-- <input formControlName="role" type="text" style="border-radius: 13px;" class="form-control" > -->
+                                <select formControlName="role" name="role" style="border-radius: 13px;" class="form-control" placeholder="Select a role">
+                                  <option value="Admin">Admin</option>
+                                  <option value="Student">Student</option>
+                                  <option value="OfficeStaff">OfficeStaff</option>
+                                </select>
                               </div>
-                              <small *ngIf="registerForm.controls['role'].dirty && registerForm.hasError('required', 'role')" class="text-danger">*Role is required</small>
+                              <!-- <small *ngIf="registerForm.controls['role'].dirty && registerForm.hasError('required', 'role')" class="text-danger">*Role is required</small> -->
     
                               
                             <!-- <button type="submit" class="btn btn-success">Login</button> -->

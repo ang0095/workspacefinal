@@ -43,10 +43,33 @@ export class LoginService {
     return localStorage.getItem('token')
   }
 
+  getRole(email:string)
+  {
+    return this.httpclient.get<string>(`${this.apiBaseurl}/getRole/`+ email,this.httpOptions)
+  }
+
   isLoggedIn(): boolean
   {
     return !!localStorage.getItem('token')
   }
+
+  // roleBased(roleValue:string)
+  // {
+  //   localStorage.setItem("keyRole", roleValue);
+       
+  //       if(roleValue == "Admin")
+  //       {
+  //         this.route.navigate(['dashboard'])
+  //       }
+  //       else if(roleValue == "Student")
+  //       {
+  //         this.route.navigate(['studash'])
+  //       }
+	//       else if(roleValue == "OfficeStaff")
+	//       {
+	//         this.route.navigate(['offdash'])
+	//       }
+  // }
 
   // getCourses(): Observable<any[]>
   // {
