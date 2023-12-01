@@ -4,6 +4,7 @@ import { EmailValidator, FormBuilder, ReactiveFormsModule, Validators,RequiredVa
 import {FormArray, FormControl, FormGroup, Validator} from '@angular/forms';
 import { LoginService } from '../capstoneservice/login.service';
 import { Router } from '@angular/router';
+import { User } from '../capmodels/user';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
 
     })
   }
-
+  
   
   onLogin()
   {
