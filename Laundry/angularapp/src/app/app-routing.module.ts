@@ -5,6 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
+import { StudashComponent } from './studash/studash.component';
+import { OffdashComponent } from './offdash/offdash.component';
 
 const routes: Routes = [
   // {path : '/laundry/schedule/add', component : ScheduleFormComponent},
@@ -12,6 +14,8 @@ const routes: Routes = [
   {path :'login' , component: LoginComponent},
   {path :'register' , component: RegisterComponent},
   {path :'dashboard' , component: DashboardComponent, canActivate:[AuthGuard]},
+  {path :'studash' , component: StudashComponent, canActivate:[AuthGuard]},
+  {path :'offdash' , component: OffdashComponent, canActivate:[AuthGuard]},
 
 
   

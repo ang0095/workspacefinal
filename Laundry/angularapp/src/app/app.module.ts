@@ -15,6 +15,8 @@ import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { StudashComponent } from './studash/studash.component';
+import { OffdashComponent } from './offdash/offdash.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     OfficeStaffComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    StudashComponent,
+    OffdashComponent
 
   ],
   imports: [

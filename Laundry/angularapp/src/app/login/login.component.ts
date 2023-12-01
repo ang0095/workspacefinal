@@ -49,32 +49,26 @@ export class LoginComponent implements OnInit {
 
 
 
+      // this.http.login(this.loginForm.value)
+      // .subscribe({
+      //   next:(res =>{
+      //     alert(res.message)
+      //     this.loginForm.reset();
+
+      //     console.log(this.loginForm.value);
+          
+      //     this.http.storeToken(res.token);
+      //     this.r.navigate(['dashboard']);
+      //     //redirect to dashboard
+      //   }),
+      //   error:(err =>{
+      //     alert(err?.error.message)
+      //   })    
+      // })
+
       this.http.login(this.loginForm.value)
       .subscribe({
-        next:(res =>{
-          alert(res.message)
-          this.loginForm.reset();
-
-          console.log(this.loginForm.value);
-          
-          this.http.storeToken(res.token);
-          this.r.navigate(['dashboard']);
-          //redirect to dashboard
-        }),
-        error:(err =>{
-          alert(err?.error.message)
-        })    
-      })
-    }
-    else 
-    {
-      //throw exception
-      console.log("oops something went wrong")
-    }
-
-    this.http.login(this.loginForm.value)
-    .subscribe({
-      next:(res)=> {
+       next:(res)=> {
         alert(res.message)
         this.loginForm.reset();
         this.http.storeToken(res.token);
@@ -100,6 +94,13 @@ export class LoginComponent implements OnInit {
       }
 
       })
+
+
+
+    }
+    
+
+    
 
 
   }
