@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
         this.http.storeToken(res.token);
 
         let keyRole: any;
-        localStorage.setItem(keyRole, roleValue);
+        localStorage.setItem("keyRole", roleValue);
         
         
         // console.log(res.token)

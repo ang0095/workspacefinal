@@ -1,35 +1,36 @@
-// import { Injectable } from '@angular/core';
-// import { CanActivate, Router} from '@angular/router';
-// import { Observable } from 'rxjs';
-// import { LoginService } from '../capstoneservice/login.service';
+import { Injectable } from '@angular/core';
+import { CanActivate, Router} from '@angular/router';
+import { Observable } from 'rxjs';
+import { LoginService } from '../capstoneservice/login.service';
 
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class OthGuard implements CanActivate {
+@Injectable({
+  providedIn: 'root'
+})
+export class AOthGuard implements CanActivate {
  
-//   constructor(private auth:LoginService, private router:Router)
-//     {
+  constructor(private auth:LoginService, private router:Router)
+    {
  
-//     }
+    }
  
-//     role = localStorage.getItem("keyRole");
+    role = localStorage.getItem("keyRole");
  
-//   canActivate():boolean{
+  canActivate():boolean{
    
-//     if(this.auth.isLoggedIn() && this.role == "Student")
-//     {
-//       return true;
-//     }
+    if(this.auth.isLoggedIn() && this.role == "OfficeStaff")
+    {
+        localStorage.removeItem("keyRole");
+      return true;
+    }
    
-//     else
-//     {
-//       alert("Error occured! Please try again.");
-//       this.router.navigate(['login']);
-//       return false;
-//     }
+    else
+    {
+      alert("Error occured! Please try again.");
+      this.router.navigate(['login']);
+      return false;
+    }
    
-//   }
+  }
  
-// }
+}

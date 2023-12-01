@@ -14,7 +14,8 @@ export class OthGuard implements CanActivate {
     }
     role = localStorage.getItem("keyRole");
 
-    canActivate(): boolean {
+    canActivate(): boolean 
+    {
 
         if (this.auth.isLoggedIn() && this.role == "Student") {
             localStorage.removeItem("keyRole");
