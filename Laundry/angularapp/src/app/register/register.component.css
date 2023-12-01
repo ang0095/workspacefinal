@@ -58,3 +58,34 @@
   .button-87:active {
     transform: scale(0.95);
   }
+
+  .custom-dropdown {
+
+    position: relative;
+  
+    display: inline-block;
+  
+  }
+  
+  .dropdown-arrow {
+  
+    position: absolute;
+  
+    top: 50%;
+  
+    right: 8px;
+  
+    transform: translateY(-50%);
+  
+    cursor: pointer;
+  
+    transition: transform 0.3s ease; /* Add smooth transition effect */
+  
+  }
+  
+  .rotated {
+  
+    transform: translateY(-50%) 
+    rotate(180deg);
+  
+  }

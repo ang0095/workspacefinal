@@ -26,6 +26,15 @@ export class RegisterComponent implements OnInit {
     })
 
   }
+  isDropdownOpen : boolean = false;
+  toggleDropdown()
+  {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  closeDropdown(){
+    this.isDropdownOpen = false;
+  }
 
   onRegister()
   {

@@ -48,10 +48,11 @@
                               <small *ngIf="registerForm.controls['mobileNumber'].dirty && registerForm.hasError('required', 'mobileNumber')" class="text-danger">*Mobile Number is required</small> -->
     
                               
-                              <div class="form-group">
+                              <div class="custom-dropdown" (click)="toggleDropdown()">
+                                <span class="dropdown-arrow" [class.rotated]="isDropdownOpen">&#9660;</span>
                                 <label for="role" style="color: black;">Role</label>
                                 <!-- <input formControlName="role" type="text" style="border-radius: 13px;" class="form-control" > -->
-                                <select formControlName="role" name="role" style="border-radius: 13px;" class="form-control" placeholder="Select a role">
+                                <select formControlName="role" name="role" style="border-radius: 13px;" class="form-control" placeholder="Select a role" *ngIf="isDropdownOpen" (blur)="closeDropdown()">
                                   <option value="Admin">Admin</option>
                                   <option value="Student">Student</option>
                                   <option value="OfficeStaff">OfficeStaff</option>
