@@ -51,13 +51,13 @@
                               <div class="form-group">
                                 <label for="role" style="color: black;">Role</label>
                                 <!-- <input formControlName="role" type="text" style="border-radius: 13px;" class="form-control" > -->
-                                <select formControlName="role" name="role" style="border-radius: 13px;" class="form-control" placeholder="Select a role">
+                                <!-- <select formControlName="role" name="role" style="border-radius: 13px;" class="form-control" placeholder="Select a role">
                                   <option value="Admin">Admin</option>
                                   <option value="Student">Student</option>
                                   <option value="OfficeStaff">OfficeStaff</option>
-                                </select>
+                                </select> -->
                               </div>
-                              <!-- <small *ngIf="registerForm.controls['role'].dirty && registerForm.hasError('required', 'role')" class="text-danger">*Role is required</small> -->
+                              <small *ngIf="registerForm.controls['role'].dirty && registerForm.hasError('required', 'role')" class="text-danger">*Role is required</small>
     
                               
                             <!-- <button type="submit" class="btn btn-success">Login</button> -->
