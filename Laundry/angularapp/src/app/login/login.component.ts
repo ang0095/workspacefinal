@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         res=>{
           roleValue=res;
+          console.log('Value role'+roleValue)
         },
         err=>
         {
@@ -75,6 +76,8 @@ export class LoginComponent implements OnInit {
         this.http.storeToken(res.token);
 
         localStorage.setItem("keyRole", roleValue);
+
+        
 
         if(roleValue == "Admin")
         {
