@@ -67,6 +67,12 @@
   
   }
   
+  .custom-dropdown.open .dropdown-arrow {
+  
+    transform: rotate(180deg);
+  
+  }
+  
   .dropdown-arrow {
   
     position: absolute;
@@ -79,13 +85,6 @@
   
     cursor: pointer;
   
-    transition: transform 0.3s ease; /* Add smooth transition effect */
-  
-  }
-  
-  .rotated {
-  
-    transform: translateY(-50%) 
-    rotate(180deg);
+    transition: transform 0.5s ease; /* Add smooth transition effect */
   
   }
