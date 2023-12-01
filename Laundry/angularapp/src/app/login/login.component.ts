@@ -39,13 +39,13 @@ export class LoginComponent implements OnInit {
       this.http.getRole(this.loginForm.value.email)
       .subscribe(
         res=>{
-          roleValue=res;
+          roleValue=res.role;
           console.log("role1:"+roleValue)
         },
         err=>
         {
           roleValue=err;
-          console.log("err1:"+roleValue)
+         // console.log("err1:"+roleValue)
         }
       )
 
