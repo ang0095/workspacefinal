@@ -39,12 +39,12 @@ export class LoginComponent implements OnInit {
       .subscribe(
         res=>{
           roleValue=res;
-          console.log("role:"+roleValue)
+          console.log("role1:"+roleValue)
         },
         err=>
         {
           roleValue=err;
-          console.log("err:"+roleValue)
+          console.log("err1:"+roleValue)
         }
       )
 
@@ -78,7 +78,7 @@ export class LoginComponent implements OnInit {
 
         localStorage.setItem("keyRole", roleValue);
         // console.log(res.token)
-        // console.log(roleValue)
+        console.log("hello",roleValue)
         
 
         if(roleValue == "Admin")
