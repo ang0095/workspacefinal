@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       //redirect to courses page(get courses)
       console.log("success")
 
-      this.http.getRole(this.loginForm.value.email)
+      this.http.getUserObj(this.loginForm.value.email)
       .subscribe(
         res=>{
           roleValue=res.role;
@@ -52,6 +52,9 @@ export class LoginComponent implements OnInit {
          // console.log("err1:"+roleValue)
         }
       )
+
+
+      
 
       // let keyId: any;
       //   localStorage.setItem(keyId, idValue);
