@@ -53,7 +53,8 @@ export class LoginComponent implements OnInit {
         }
       )
 
-      this.http.getRole(this.loginForm.value.email)
+      // let keyId: any;
+      //   localStorage.setItem(keyId, idValue);
 
 
 
@@ -68,7 +69,7 @@ export class LoginComponent implements OnInit {
 
         let keyRole: any;
         localStorage.setItem(keyRole, roleValue);
-        /////////////////////////////////////////////
+        
         
         // console.log(res.token)
         console.log("hello"+roleValue)
