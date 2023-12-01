@@ -46,7 +46,7 @@ export class LoginService {
   getRole(email:any):Observable<any>
   {
     // console.log('inservice'+email)
-    return this.httpclient.get<any>(`${this.apiBaseurl}/getRole/`+ email)
+    return this.httpclient.get<any>(`${this.apiBaseurl}/getRole/`+ email, this.httpOptions)
   }
 
   isLoggedIn(): boolean
