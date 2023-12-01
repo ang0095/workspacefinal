@@ -25,6 +25,7 @@ export class LoginService {
   login(loginObj:any)
   {
     return  this.httpclient.post<any>(`${this.apiBaseurl}/authenticate`,loginObj, this.httpOptions);
+    
   }
 
   logOut()
