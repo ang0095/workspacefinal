@@ -75,7 +75,8 @@ export class LoginComponent implements OnInit {
         this.http.storeToken(res.token);
 
         localStorage.setItem("keyRole", roleValue);
-
+        console.log(res.token)
+        console.log(roleValue)
         
 
         if(roleValue == "Admin")
