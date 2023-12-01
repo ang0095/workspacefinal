@@ -31,8 +31,24 @@ export class LoginComponent implements OnInit {
     
     if(this.loginForm.valid)
     {
+      let roleValue:any;
+      let uname:any;
       //redirect to courses page(get courses)
       console.log("success")
+
+      this.http.getRole(this.loginForm.value.email)
+      .subscribe(
+        res=>{
+          roleValue=res;
+        },
+        err=>
+        {
+          roleValue=err;
+        }
+      )
+
+
+
       this.http.login(this.loginForm.value)
       .subscribe({
         next:(res =>{
@@ -55,6 +71,35 @@ export class LoginComponent implements OnInit {
       //throw exception
       console.log("oops something went wrong")
     }
+
+    this.http.login(this.loginForm.value)
+    .subscribe({
+      next:(res)=> {
+        alert(res.message)
+        this.loginForm.reset();
+        this.http.storeToken(res.token);
+
+        localStorage.setItem("keyRole", roleValue);
+        localStorage.setItem("keyName", uname);
+
+        if(roleValue == "Admin")
+        {
+          this.r.navigate(['dashboard'])
+        }
+        else if(roleValue == "Student")
+        {
+          this.r.navigate(['studash'])
+        }
+	      else if(roleValue == "OfficeStaff")
+	      {
+	      this.r.navigate(['offdash'])
+	      }
+      },
+      error:(err)=>{
+        alert(err.error.message);
+      }
+
+      })
 
 
   }
