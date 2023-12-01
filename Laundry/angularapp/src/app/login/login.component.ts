@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid)
     {
       let roleValue:any;
-      let uname:any;
       //redirect to courses page(get courses)
       console.log("success")
 
