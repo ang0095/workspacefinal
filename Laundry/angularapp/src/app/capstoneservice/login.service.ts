@@ -43,9 +43,10 @@ export class LoginService {
     return localStorage.getItem('token')
   }
 
-  getRole(email:string)
+  getRole(email:any):Observable<any>
   {
-    return this.httpclient.get<string>(`${this.apiBaseurl}/getRole/`+ email,this.httpOptions)
+    // console.log('inservice'+email)
+    return this.httpclient.get<any>(`${this.apiBaseurl}/getRole/`+ email)
   }
 
   isLoggedIn(): boolean
