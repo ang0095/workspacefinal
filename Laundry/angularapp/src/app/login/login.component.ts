@@ -5,6 +5,7 @@ import {FormArray, FormControl, FormGroup, Validator} from '@angular/forms';
 import { LoginService } from '../capstoneservice/login.service';
 import { Router } from '@angular/router';
 import { User } from '../capmodels/user';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
   selector: 'app-login',
@@ -77,9 +78,10 @@ export class LoginComponent implements OnInit {
         
         this.http.storeToken(res.token);
 
-        localStorage.setItem("keyRole", roleValue);
+        let keyRole: any;
+        localStorage.setItem(keyRole, roleValue);
         // console.log(res.token)
-        console.log("hello",roleValue)
+        console.log("hello"+roleValue)
         
 
         if(roleValue == "Admin")
