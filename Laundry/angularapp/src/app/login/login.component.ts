@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
       .subscribe(
         res=>{
           roleValue=res;
-          console.log('Value role1'+roleValue)
         },
         err=>
         {
