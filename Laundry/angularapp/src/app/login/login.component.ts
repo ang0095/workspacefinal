@@ -58,6 +58,8 @@ export class LoginComponent implements OnInit {
       //     console.log(this.loginForm.value);
           
       //     this.http.storeToken(res.token);
+
+          
       //     this.r.navigate(['dashboard']);
       //     //redirect to dashboard
       //   }),
@@ -70,12 +72,10 @@ export class LoginComponent implements OnInit {
       .subscribe({
        next:(res)=> {
         alert(res.message)
-        this.loginForm.reset();
-        console.log("ROle="+roleValue)
+        
         this.http.storeToken(res.token);
 
         localStorage.setItem("keyRole", roleValue);
-        localStorage.setItem("keyName", uname);
 
         if(roleValue == "Admin")
         {
@@ -89,6 +89,10 @@ export class LoginComponent implements OnInit {
 	      {
 	      this.r.navigate(['offdash'])
 	      }
+        
+        console.log("Role="+roleValue)
+        this.loginForm.reset();
+
       },
       error:(err)=>{
         alert(err.error.message);
@@ -98,6 +102,11 @@ export class LoginComponent implements OnInit {
 
 
 
+    }
+    else 
+    
+    {
+      console.log("error")
     }
     
 
