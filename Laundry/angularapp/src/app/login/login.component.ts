@@ -52,6 +52,19 @@ export class LoginComponent implements OnInit {
          // console.log("err1:"+roleValue)
         }
       )
+        let usernameValue:any;
+      this.http.getUserObj(this.loginForm.value.email)
+      .subscribe(
+        res=>{
+          usernameValue = res.username;
+        },
+        err=>
+        {
+          usernameValue=err;
+        }
+      )
+
+      
 
 
       
@@ -72,6 +85,7 @@ export class LoginComponent implements OnInit {
 
         let keyRole: any;
         localStorage.setItem("keyRole", roleValue);
+        localStorage.setItem("keyUsername", usernameValue)
         // sessionStorage.setItem("keyRole", roleValue);
         
         
