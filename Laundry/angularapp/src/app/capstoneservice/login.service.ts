@@ -25,7 +25,7 @@ export class LoginService {
   login(loginObj:any)
   {
     return  this.httpclient.post<any>(`${this.apiBaseurl}/authenticate`,loginObj, this.httpOptions);
-    
+
   }
 
   logOut()
@@ -37,6 +37,10 @@ export class LoginService {
   storeToken(tokenValue:string)
   {
     localStorage.setItem('token', tokenValue)
+    // setTimeout( ()=> {
+    //   alert("Session logged out!");
+    //   this.logOut();
+    // },10000);
   }
 
   getToken()
