@@ -14,8 +14,8 @@ const routes: Routes = [
   {path :'login' , component: LoginComponent},
   {path :'register' , component: RegisterComponent},
   {path :'dashboard' , component: DashboardComponent, canActivate:[AuthGuard]},
-  {path :'studash' , component: StudashComponent, canActivate:[AuthGuard]},
-  {path :'offdash' , component: OffdashComponent, canActivate:[AuthGuard]},
+  {path :'studash' , component: StudashComponent},
+  {path :'offdash' , component: OffdashComponent},
 
 
   

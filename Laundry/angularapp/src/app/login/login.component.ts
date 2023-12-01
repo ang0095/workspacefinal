@@ -71,20 +71,21 @@ export class LoginComponent implements OnInit {
        next:(res)=> {
         alert(res.message)
         this.loginForm.reset();
+        console.log("ROle="+roleValue)
         this.http.storeToken(res.token);
 
         localStorage.setItem("keyRole", roleValue);
         localStorage.setItem("keyName", uname);
 
-        if(roleValue === "Admin")
+        if(roleValue == "Admin")
         {
           this.r.navigate(['dashboard'])
         }
-        else if(roleValue === "Student")
+        else if(roleValue == "Student")
         {
           this.r.navigate(['studash'])
         }
-	      else if(roleValue === "OfficeStaff")
+	      else if(roleValue == "OfficeStaff")
 	      {
 	      this.r.navigate(['offdash'])
 	      }

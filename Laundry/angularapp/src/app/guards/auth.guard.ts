@@ -15,6 +15,7 @@ export class AuthGuard implements CanActivate {
     if(this.http.isLoggedIn())
     {
       return true;
+      
     }
     else{
       alert("PLease Login First")
