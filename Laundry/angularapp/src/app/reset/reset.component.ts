@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ResetPassword } from '../capmodels/reset-password.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ConfirmPasswordValidator } from '../helpers/confirm-password.validator';
 
 @Component({
   selector: 'app-reset',
@@ -20,7 +21,11 @@ export class ResetComponent implements OnInit {
       password:[null, Validators.required],
       confirmPassword:[null, Validators.required]
 
-    })
+    },
+    {
+      validator: ConfirmPasswordValidator("password", "confirmPassword")
+    }
+    );
   }
 
 
