@@ -15,6 +15,7 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
 const routes: Routes = [
   // {path : '/laundry/schedule/add', component : ScheduleFormComponent},
   // {path : '/laundry/schedule/', component : ScheduleFormComponent}
+  {path :'', component:LoginComponent},
   {path :'login' , component: LoginComponent},
   {path :'register' , component: RegisterComponent},
   {path :'dashboard' , component: DashboardComponent, canActivate:[AuthGuard]},
