@@ -17,7 +17,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { StudashComponent } from './studash/studash.component';
 import { OffdashComponent } from './offdash/offdash.component';
-import { ResetComponent } from './reset/reset.component';
+// import { ResetComponent } from './reset/reset.component';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { ResetComponent } from './reset/reset.component';
     DashboardComponent,
     StudashComponent,
     OffdashComponent,
-    ResetComponent
+    ForgetpasswordComponent
 
   ],
   imports: [

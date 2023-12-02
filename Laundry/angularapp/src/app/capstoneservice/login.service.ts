@@ -53,15 +53,20 @@ export class LoginService {
     return this.httpclient.get<any>(`${this.apiBaseurl}`)
   }
 
-  resetPassword(email: string, newPassword: string): Observable<any> {
-    const resetPasswordData = { email, newPassword }; 
-    return this.httpclient.put<any>(`${this.apiBaseurl}/resetpassword`, resetPasswordData, this.httpOptions);
-  }
+  // resetPassword(email: string, newPassword: string): Observable<any> {
+  //   const resetPasswordData = { email, newPassword }; 
+  //   return this.httpclient.put<any>(`${this.apiBaseurl}/resetpassword`, resetPasswordData, this.httpOptions);
+  // }
 
   getUserObj(email:any):Observable<any>
   {
     // console.log('inservice'+email)
     return this.httpclient.get<any>(`${this.apiBaseurl}/getUserObj/`+ email)
+  }
+
+  reset(resetObj:any)
+  {
+    return this.httpclient.put<any>(`${this.apiBaseurl}/updatePassword`, resetObj, this.httpOptions);
   }
 
   isLoggedIn(): boolean
