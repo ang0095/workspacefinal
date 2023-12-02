@@ -27,8 +27,16 @@ export class ResetComponent implements OnInit {
     initializeForm():void
     {
       this.resetPasswordForm = this.fb.group({
-        newPassword
-      })
+        email:['', [Validators.required, Validators.email]],
+        newPassword:['', [Validators.required]],
+      });
+    }
+
+    resetPassword():void{
+      if(this.resetPasswordForm.valid)
+      {
+        const email = this.resetPasswordForm.get()
+      }
     }
   }
 
