@@ -11,7 +11,7 @@
                             <div class="form-group">
                                 <label for="email">Email: </label>
                                 <input type="email" id="email" value="email" formControlName = "email" class="form-control"  placeholder="Enter email">
-                                <small *ngIf="resetPasswordForm.controls['email'].dirty && resetPasswordForm.hasError('email, 'email')" class="text-danger">* Enter valid Email</small>
+                                <!-- <small *ngIf="resetPasswordForm.controls['email'].dirty && resetPasswordForm.hasError('email, 'email')" class="text-danger">* Enter valid Email</small> -->
 
                             </div>
                         
@@ -19,18 +19,13 @@
                               <label for="newPassword" style="color: black">New Password:</label>
                               <input formControlName="newPassword" value="newPassword" id="newPassword" type="password" style="border-radius: 13px;" class="form-control"  placeholder="Enter new password">
                             </div>
-                            <small *ngIf="resetPasswordForm.controls['password'].dirty && resetPasswordForm.hasError('required, 'password')" class="text-danger">* Enter valid Email</small>
+                            <!-- <small *ngIf="resetPasswordForm.controls['password'].dirty && resetPasswordForm.hasError('required, 'password')" class="text-danger">* Enter valid Email</small> -->
 
 
                             <br>
                             
                             <button type="submit" [disabled]="!resetPasswordForm.valid" (click)="resetPassword()" class="btn btn-success">Reset</button>
-                            <!-- <button [disabled]="resetPasswordForm.invalid" type="submit" class="button-87" role="button">Login</button> -->
-                            <br>
-                            <p style="color: black;">Remembered password ?
-                                <a routerLink = "/login">Login</a>
-                            
-                            </p>
+                           
                           
                     </form>
                     

@@ -11,11 +11,9 @@ import { LoginService } from '../capstoneservice/login.service';
 })
 export class ResetComponent implements OnInit {
   resetPasswordForm!:FormGroup;
-  emailToReset!: string;
-  emailToken!:string;
-  resetPasswordObj = new ResetPassword();
+  
 
-  constructor(private fb:FormBuilder, private http:LoginService) 
+  constructor(private fb:FormBuilder, private http:LoginService, ) 
   { 
     this.resetPasswordForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -37,18 +35,22 @@ export class ResetComponent implements OnInit {
 
     resetPassword() {
       if (this.resetPasswordForm.valid) {
-        const { email, newPassword } = this.resetPasswordForm.value;
+        const  email = this.resetPasswordForm.value.email;
+        const  newPassword  = this.resetPasswordForm.value.newPassword;
+        
+        console.log(email, newPassword);
+
         this.http.resetPassword(email, newPassword)
-          .subscribe(
-            () => {
-              console.log('Password reset successful');
-              // Add any additional logic for success
-            },
-            error => {
-              console.error('Password reset failed:', error);
-              // Handle error accordingly
-            }
-          );
+          .subscribe({
+            next:(res =>{
+              alert(res.message)
+              this.registerForm.reset();
+              this.routes.navigate(['login']);
+            }),
+            error:(err =>{
+              alert(err?.error.message)
+            })
+      });
       }
     }
   }
