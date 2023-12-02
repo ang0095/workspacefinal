@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./reset.component.css']
 })
 export class ResetComponent implements OnInit {
-  resetPassword!:FormGroup;
+  resetPasswordForm!:FormGroup;
   emailToReset!: string;
   emailToken!:string;
   resetPasswordObj = new ResetPassword();
@@ -16,7 +16,11 @@ export class ResetComponent implements OnInit {
   constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
-    
+    this.resetPasswordForm = this.fb.group({
+      password:[null, Validators.required],
+      confirmPassword:[null, Validators.required]
+
+    })
   }
 
 
