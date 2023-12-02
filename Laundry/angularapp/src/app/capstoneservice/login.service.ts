@@ -48,6 +48,11 @@ export class LoginService {
     return localStorage.getItem('token')
   }
 
+  getallUsers():Observable<any>
+  {
+    return this.httpclient.get<any>(`${this.apiBaseurl}`)
+  }
+
   getUserObj(email:any):Observable<any>
   {
     // console.log('inservice'+email)

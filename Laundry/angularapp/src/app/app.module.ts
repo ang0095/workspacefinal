@@ -17,6 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { StudashComponent } from './studash/studash.component';
 import { OffdashComponent } from './offdash/offdash.component';
+import { ResetComponent } from './reset/reset.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { OffdashComponent } from './offdash/offdash.component';
     RegisterComponent,
     DashboardComponent,
     StudashComponent,
-    OffdashComponent
+    OffdashComponent,
+    ResetComponent
 
   ],
   imports: [

@@ -10,8 +10,17 @@ export class DashboardComponent implements OnInit {
 
   constructor(private http:LoginService) { }
 
-  ngOnInit(): void {
+  users:any[] =[];
+  ngOnInit(): void 
+  {
+
   }
+
+  getallUsers():void
+  {
+    this.http.getallUsers().subscribe(r => this.users=r)
+  }
+  
 
   logout()
   {

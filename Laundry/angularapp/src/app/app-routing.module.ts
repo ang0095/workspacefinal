@@ -9,6 +9,7 @@ import { StudashComponent } from './studash/studash.component';
 import { OffdashComponent } from './offdash/offdash.component';
 import { OthGuard } from './guards/oth.guard';
 import { AOthGuard } from './guards/oth2.guard';
+import { ResetComponent } from './reset/reset.component';
 
 const routes: Routes = [
   // {path : '/laundry/schedule/add', component : ScheduleFormComponent},
@@ -18,6 +19,8 @@ const routes: Routes = [
   {path :'dashboard' , component: DashboardComponent, canActivate:[AuthGuard]},
   {path :'studash' , component: StudashComponent, canActivate:[OthGuard]},
   {path :'offdash' , component: OffdashComponent, canActivate:[AOthGuard]},
+  {path :'reset' , component: ResetComponent},
+
 
 
   

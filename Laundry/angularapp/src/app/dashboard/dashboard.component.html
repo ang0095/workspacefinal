@@ -17,4 +17,15 @@
     </div>
     </div>
 <button (click)="logout()" class="btn btn-warning">Logout</button>
+<button (click)="getallUsers()">Users</button>
+
+<div *ngIf="users.length >0">
+  <h2>User List</h2>
+  <ul>
+    <li *ngFor="let user of users">
+      {{user.username}}
+    </li>
+  </ul>
+
+</div>
 
