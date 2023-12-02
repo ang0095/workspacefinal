@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ResetPassword } from '../capmodels/reset-password.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ConfirmPasswordValidator } from '../helpers/confirm-password.validator';
+import { LoginService } from '../capstoneservice/login.service';
 
 @Component({
   selector: 'app-reset',
@@ -14,12 +15,14 @@ export class ResetComponent implements OnInit {
   emailToken!:string;
   resetPasswordObj = new ResetPassword();
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder, private http:LoginService) { }
 
   ngOnInit(): void {
-    this.resetPasswordForm = this.fb.group({
-      password:[null, Validators.required],
-      confirmPassword:[null, Validators.required]
+    // this.resetPasswordForm = this.fb.group({
+    //   password:[null, Validators.required],
+    //   confirmPassword:[null, Validators.required],
+
+
 
     },
     {
