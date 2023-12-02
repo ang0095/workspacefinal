@@ -53,6 +53,11 @@ export class LoginService {
     return this.httpclient.get<any>(`${this.apiBaseurl}`)
   }
 
+  resetPassword(email: string, newPassword: string): Observable<any> {
+    const resetPasswordData = { email, newPassword };
+    return this.httpclient.put(`${this.apiBaseurl}/resetpassword`, resetPasswordData);
+  }
+
   getUserObj(email:any):Observable<any>
   {
     // console.log('inservice'+email)

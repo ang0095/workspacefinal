@@ -15,27 +15,40 @@ export class ResetComponent implements OnInit {
   emailToken!:string;
   resetPasswordObj = new ResetPassword();
 
-  constructor(private fb:FormBuilder, private http:LoginService) { }
+  constructor(private fb:FormBuilder, private http:LoginService) 
+  { 
+    this.resetPasswordForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      newPassword: ['', Validators.required]
+    });
+  }
 
   ngOnInit(): void {
-    // this.resetPasswordForm = this.fb.group({
-    //   password:[null, Validators.required],
-    //   confirmPassword:[null, Validators.required],
-    this.initializeForm();
+   
     }
 
-    initializeForm():void
-    {
-      this.resetPasswordForm = this.fb.group({
-        email:['', [Validators.required, Validators.email]],
-        newPassword:['', [Validators.required]],
-      });
-    }
+    // initializeForm():void
+    // {
+    //   this.resetPasswordForm = this.fb.group({
+    //     email:['', [Validators.required, Validators.email]],
+    //     newPassword:['', [Validators.required]],
+    //   });
+    // }
 
-    resetPassword():void{
-      if(this.resetPasswordForm.valid)
-      {
-        const email = this.resetPasswordForm.get()
+    resetPassword() {
+      if (this.resetPasswordForm.valid) {
+        const { email, newPassword } = this.resetPasswordForm.value;
+        this.http.resetPassword(email, newPassword)
+          .subscribe(
+            () => {
+              console.log('Password reset successful');
+              // Add any additional logic for success
+            },
+            error => {
+              console.error('Password reset failed:', error);
+              // Handle error accordingly
+            }
+          );
       }
     }
   }
