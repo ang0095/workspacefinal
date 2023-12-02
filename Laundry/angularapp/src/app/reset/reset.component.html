@@ -10,14 +10,14 @@
                     <form [formGroup]="resetPasswordForm" >
                             <div class="form-group">
                                 <label for="email">Email: </label>
-                                <input type="email" id="email" value="email" formControlName = "email" class="form-control"  placeholder="Enter email">
+                                <input type="email" id="email" formControlName = "email" class="form-control"  placeholder="Enter email">
                                 <!-- <small *ngIf="resetPasswordForm.controls['email'].dirty && resetPasswordForm.hasError('email, 'email')" class="text-danger">* Enter valid Email</small> -->
 
                             </div>
                         
                             <div class="form-group">
                               <label for="newPassword" style="color: black">New Password:</label>
-                              <input formControlName="newPassword" value="newPassword" id="newPassword" type="password" style="border-radius: 13px;" class="form-control"  placeholder="Enter new password">
+                              <input formControlName="newPassword" id="newPassword" type="password" style="border-radius: 13px;" class="form-control"  placeholder="Enter new password">
                             </div>
                             <!-- <small *ngIf="resetPasswordForm.controls['password'].dirty && resetPasswordForm.hasError('required, 'password')" class="text-danger">* Enter valid Email</small> -->
 
