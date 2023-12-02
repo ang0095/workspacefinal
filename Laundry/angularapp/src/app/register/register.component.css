@@ -1,5 +1,4 @@
-/* 
-#container {
+/* #container {
     width:100vw;
     height:100vh;
     background-image: url(https://w.wallhaven.cc/full/p8/wallhaven-p8x6mm.jpg);
@@ -85,6 +84,6 @@
   
     cursor: pointer;
   
-    transition: transform 0.5s ease; /* Add smooth transition effect */
+    transition: transform 0.3s ease; /* Add smooth transition effect */
   
   }

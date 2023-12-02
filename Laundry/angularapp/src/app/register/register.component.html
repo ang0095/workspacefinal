@@ -49,17 +49,20 @@
     
                               
                               <div class="custom-dropdown" [ngClass]="{'open':isDropdownOpen}" (click)="toggleDropdown()" >
-                                <span class="dropdown-arrow">&#9660;</span>
+                                <span class="dropdown-arrow" style="color:orange;">&#9660;</span>
                                 <label for="role" style="color: black;">Role</label>
                                 <!-- <input formControlName="role" type="text" style="border-radius: 13px;" class="form-control" > -->
-                                <select formControlName="role" name="role" style="border-radius: 13px;" class="form-control" placeholder="Select a role">
-                                  <option value="Admin">Admin</option>
-                                  <option value="Student">Student</option>
-                                  <option value="OfficeStaff">OfficeStaff</option>
-                                </select>
+                                
+                                    <select formControlName="role" name="role" style="border-radius: 13px;" class="form-control" placeholder="Select a role">
+                                      <option value="Admin">Admin</option>
+                                      <option value="Student">Student</option>
+                                      <option value="OfficeStaff">OfficeStaff</option>
+                                    </select>
+                                  
+                                
                               </div>
                               <!-- <small *ngIf="registerForm.controls['role'].dirty && registerForm.hasError('required', 'role')" class="text-danger">*Role is required</small> -->
-    
+                              
                               
                             <!-- <button type="submit" class="btn btn-success">Login</button> -->
                             <button  type="submit" class="button-87" role="button">Register</button>
