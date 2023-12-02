@@ -21,11 +21,25 @@ export class RegisterComponent implements OnInit {
       email:['',Validators.email],
       password:['',Validators.required],
       // mobileNumber:['',Validators.required],
+      cpassword:['',Validators.required],
       role:['',Validators.required]
-
-    })
+    },
+      {
+        validator:
+      this.passwordMatch
+    });
 
   }
+
+  passwordMatch(group:FormGroup)
+  {
+    const password = group.get('password').value;
+    const confirmpass = group.get('cpassword').value;
+     
+    return password === confirmpass ? null : {mismatch:true};
+ 
+  }
+
   isDropdownOpen : boolean = false;
   toggleDropdown()
   {

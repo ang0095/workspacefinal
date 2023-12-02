@@ -32,6 +32,13 @@
                                          
                             </div>
                               <small *ngIf="registerForm.controls['password'].dirty && registerForm.hasError('required', 'password')" class="text-danger">*Password is required</small>
+
+                            <!-- <div>
+                                <input formControlName="cpassword" type="password" placeholder="Confirm New Password">
+                                <div
+                                *ngIf="registerForm.hasError('mismatch')" class="text text-danger" >
+                                *Passwords do not match
+                            </div> -->
     
                               
     <!--                         
