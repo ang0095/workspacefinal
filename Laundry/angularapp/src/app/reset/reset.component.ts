@@ -25,7 +25,12 @@ export class ResetComponent implements OnInit {
     {
       validator: ConfirmPasswordValidator("password", "confirmPassword")
     }
-    );
+    )
+  }
+
+  reset()
+  {
+    
   }
 
 
