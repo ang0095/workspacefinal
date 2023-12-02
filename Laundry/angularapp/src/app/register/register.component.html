@@ -4,8 +4,8 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="text-center">
-                        <h1 style="color: black;">Registration</h1>
-                        <h6 style="color: #2D9596;">Register to Login into new account</h6>
+                        <h2 style="color: black;">Registration</h2>
+                        <!-- <h6 style="color: #2D9596;">Register to Login into new account</h6> -->
                     </div>
     
                     <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
@@ -73,11 +73,12 @@
                               </div>
                               <!-- <small *ngIf="registerForm.controls['role'].dirty && registerForm.hasError('required', 'role')" class="text-danger">*Role is required</small> -->
                               
-                              
-                            <!-- <button type="submit" class="btn btn-success">Login</button> -->
-                            <button  type="submit" class="button-87" role="button">Register</button>
+                              <br>
+                              <br>
+                            <button type="submit" class="btn btn-success">Register</button>
+                            <!-- <button  type="submit" class="button-87" role="button">Register</button> -->
                             
-                            <p style="color: black;">Already have an account
+                            <p style="color: black;">Already have an account ?
                                 <a [routerLink]="['/login']">
                                     Login
                                 </a>
