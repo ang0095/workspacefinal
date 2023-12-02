@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class ResetComponent implements OnInit {
   resetPasswordForm!:FormGroup;
+  error: any;
   
 
   constructor(private fb:FormBuilder, private http:LoginService, private route:Router) 
@@ -46,9 +47,12 @@ export class ResetComponent implements OnInit {
           .subscribe(
             ()=>{
               console.log("success");
+              alert("password changed succesfully");
+              this.route.navigate(['login']);
             },
             error=>{
               console.error("failure");
+              this.error = error.message;
             }
           );
       }

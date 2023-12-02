@@ -54,8 +54,8 @@ export class LoginService {
   }
 
   resetPassword(email: string, newPassword: string): Observable<any> {
-    const resetPasswordData = { email, newPassword };
-    return this.httpclient.put(`${this.apiBaseurl}/resetpassword`, resetPasswordData);
+    const resetPasswordData = { email, newPassword }; 
+    return this.httpclient.put<any>(`${this.apiBaseurl}/resetpassword`, resetPasswordData, this.httpOptions);
   }
 
   getUserObj(email:any):Observable<any>
