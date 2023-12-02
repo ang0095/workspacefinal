@@ -21,20 +21,15 @@ export class ResetComponent implements OnInit {
     // this.resetPasswordForm = this.fb.group({
     //   password:[null, Validators.required],
     //   confirmPassword:[null, Validators.required],
-
-
-
-    },
-    {
-      validator: ConfirmPasswordValidator("password", "confirmPassword")
+    this.initializeForm();
     }
-    )
+
+    initializeForm():void
+    {
+      this.resetPasswordForm = this.fb.group({
+        newPassword
+      })
+    }
   }
 
-  reset()
-  {
-    
-  }
-
-
-}
+  

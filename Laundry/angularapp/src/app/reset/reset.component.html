@@ -8,26 +8,21 @@
                     </div>
     
                     <form [formGroup]="resetPasswordForm" >
+                            <div class="form-group">
+                                <label for="email">Email: </label>
+                                <input type="email" id="email" formControlName = "email">
+                            </div>
                         
                             <div class="form-group">
-                              <label for="password" style="color: black">New Password</label>
-                              <input formControlName="password" value="password" type="password" style="border-radius: 13px;" class="form-control" aria-describedby="emailHelp" placeholder="Enter new password">
+                              <label for="newPassword" style="color: black">New Password:</label>
+                              <input formControlName="newPassword" value="newPassword" id="newPassword" type="password" style="border-radius: 13px;" class="form-control"  placeholder="Enter new password">
                             </div>
                             <small *ngIf="resetPasswordForm.controls['password'].dirty && resetPasswordForm.hasError('required, 'password')" class="text-danger">* Enter valid Email</small>
 
-                            <div class="form-group">
-                               
-                                    <label for="confirmPassword" style="color: black;">Confirm Password</label>
-                                    <input formControlName="confirmPassword" value="confirmPassword" type="password" style="border-radius: 13px;" class="form-control" placeholder="Confirm password">
-
-                            </div>
-
-                            <small *ngIf="resetPasswordForm.controls['confirmPassword'].dirty  && resetPasswordForm.hasError('required', 'confirmPassword')" class="text-danger">*Password is required</small>
-                            <small *ngIf="resetPasswordForm.hasError('ConfirmPasswordValidator', 'confirmPassword')" class="text-danger">*Password doesn't match</small>
 
                             <br>
                             
-                            <button type="submit" (click)="reset()" class="btn btn-success">Reset</button>
+                            <button type="submit" (click)="resetPassword()" class="btn btn-success">Reset</button>
                             <!-- <button [disabled]="resetPasswordForm.invalid" type="submit" class="button-87" role="button">Login</button> -->
                             <br>
                             <p style="color: black;">Remembered password ?
