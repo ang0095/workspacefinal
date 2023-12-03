@@ -1,7 +1,7 @@
 #container {
     width:100vw;
     height:100vh;
-    background-image: url(https://w.wallhaven.cc/full/p8/wallhaven-p8x6mm.jpg);
+    background-image: url(https://w.wallhaven.cc/full/13/wallhaven-13kwk3.jpg);
     background-size:cover;
 }
 .card{
@@ -13,7 +13,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: hsla(205, 46%, 30%, 1);
-    background: linear-gradient(176deg, rgba(183,106,230,0.30033263305322133) 0%, rgba(242,209,174,0.29753151260504207) 47%, rgba(212,174,235,0.30033263305322133) 100%);  }
+background: linear-gradient(176deg, rgba(183,106,230,0.30033263305322133) 0%, rgba(242,209,174,0.29753151260504207) 47%, rgba(212,174,235,0.30033263305322133) 100%);  }
 
 .card{
     h6{
