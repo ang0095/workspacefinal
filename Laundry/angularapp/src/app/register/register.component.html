@@ -12,14 +12,14 @@
                         
                             <div class="form-group">
                               <label for="userName" style="color: black">Username</label>
-                              <input formControlName="userName" type="text" style="border-radius: 13px;" class="form-control" aria-describedby="emailHelp" placeholder="Enter Username">
+                              <input formControlName="userName" type="text" style="border-radius: 15px;" class="form-control" aria-describedby="emailHelp" placeholder="Enter Username">
                             </div>
                             <small *ngIf="registerForm.controls['userName'].dirty && registerForm.hasError('required', 'userName')" class="text-danger">*Username is required</small>
     
                             
                             <div class="form-group">
                               <label for="email" style="color: black;">Email</label>
-                              <input formControlName="email" type="email" style="border-radius: 13px;" class="form-control" placeholder="Enter Email">
+                              <input formControlName="email" type="email" style="border-radius: 15px;" class="form-control" placeholder="Enter Email">
                             </div>
                             <small *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('email', 'email')" class="text-danger">*Enter a valid email</small>
     
@@ -27,7 +27,7 @@
                             <div class="form-group"> 
                               
                                 <label for="password" style="color: black;">Password</label>
-                                <input formControlName="password" type="password" style="border-radius: 13px;" class="form-control" placeholder="Enter Password">
+                                <input formControlName="password" type="password" style="border-radius: 15px;" class="form-control" placeholder="Enter Password">
                                 <span class="fa-regular fa-eye"></span>
                                          
                             </div>
@@ -35,7 +35,7 @@
                           
                               <div class="form-group">
                                 <label for="cpassword" style="color: black;">Confirm Password</label>
-                                <input formControlName="cpassword" type="password" placeholder="Confirm New Password" class="form-control" style="border-radius: 13px;">
+                                <input formControlName="cpassword" type="password" placeholder="Confirm New Password" class="form-control" style="border-radius: 15px;">
                                 <div
                                 *ngIf="registerForm.hasError('mismatch')" class="text text-danger" >
                                 *Passwords do not match
@@ -47,13 +47,13 @@
     <!--                         
                               <div class="form-group">
                                 <label for="email" style="color: black;">Confirm Password</label>
-                                <input formControlName="password" type="text" style="border-radius: 13px;" class="form-control" >
+                                <input formControlName="password" type="text" style="border-radius: 15px;" class="form-control" >
                               </div> -->
                               
     
                               <!-- <div class="form-group">
                                 <label for="mobileNumber" style="color: black;">Mobile Number</label>
-                                <input formControlName="mobileNumber" type="text" style="border-radius: 13px;" class="form-control" placeholder="10 digit number">
+                                <input formControlName="mobileNumber" type="text" style="border-radius: 15px;" class="form-control" placeholder="10 digit number">
                               </div>
                               <small *ngIf="registerForm.controls['mobileNumber'].dirty && registerForm.hasError('required', 'mobileNumber')" class="text-danger">*Mobile Number is required</small> -->
     
@@ -61,15 +61,13 @@
                               <div class="custom-dropdown" [ngClass]="{'open':isDropdownOpen}" (click)="toggleDropdown()" >
                                 <span class="dropdown-arrow" style="color:orange;">&#9660;</span>
                                 <label for="role" style="color: black;">Role</label>
-                                <!-- <input formControlName="role" type="text" style="border-radius: 13px;" class="form-control" > -->
+                                <!-- <input formControlName="role" type="text" style="border-radius: 15px;" class="form-control" > -->
                                 
-                                    <select formControlName="role" name="role" style="border-radius: 13px;" class="form-control" placeholder="role">
+                                    <select formControlName="role" name="role" style="border-radius: 15px;" class="form-control" placeholder="role">
                                       <option value="Admin">Admin</option>
                                       <option value="Student">Student</option>
                                       <option value="OfficeStaff">OfficeStaff</option>
                                     </select>
-                                  
-                                
                               </div>
                               <!-- <small *ngIf="registerForm.controls['role'].dirty && registerForm.hasError('required', 'role')" class="text-danger">*Role is required</small> -->
                               
