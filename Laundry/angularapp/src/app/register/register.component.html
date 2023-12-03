@@ -57,8 +57,8 @@
                             <small *ngIf="registerForm.controls['mobileNumber'].dirty && registerForm.hasError('required', 'mobileNumber')" class="text-danger">*Mobile Number is required</small> -->
   
                             
-                            <div class="custom-dropdown" [ngClass]="{'open':isDropdownOpen}" (click)="toggleDropdown()" >
-                              <span class="dropdown-arrow" style="color:orange;">&#9660;</span>
+                            <div class="form-group" >
+                              <!-- <span class="dropdown-arrow" style="color:orange;">&#9660;</span> -->
                               <label for="role" style="color: black;"> &nbsp;Role</label>
                               <!-- <input formControlName="role" type="text" style="border-radius: 13px;" class="form-control" > -->
                               
@@ -73,7 +73,7 @@
                             <!-- <small *ngIf="registerForm.controls['role'].dirty && registerForm.hasError('required', 'role')" class="text-danger">*Role is required</small> -->
                             
                             <br>
-                            <br>
+                            
                           <button type="submit" class="btn btn-success" style="border-radius: 13px;">Login</button>
                           <!-- <button  type="submit" class="button-87" role="button">Register</button> -->
                           
