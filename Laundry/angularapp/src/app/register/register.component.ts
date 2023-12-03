@@ -21,14 +21,7 @@ export class RegisterComponent implements OnInit {
       email:['',Validators.email],
       password:['',Validators.required],
       // mobileNumber:['',Validators.required],
-      <div class="form-group">
-                                <label for="cpassword" style="color: black;"> &nbsp;Confirm Password</label>
-                                <input formControlName="cpassword" type="password" placeholder="Confirm New Password" class="form-control" style="border-radius: 15px;">
-                                <div
-                                *ngIf="registerForm.hasError('mismatch')" class="text text-danger" >
-                                *Passwords do not match
-                            </div>
-                            </div>
+      `cpassword:['',Validators.required],
       role:['',Validators.required]
     },
       {
