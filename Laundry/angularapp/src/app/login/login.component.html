@@ -25,7 +25,13 @@
                             </div>
 
                             <small *ngIf="loginForm.controls['password'].dirty  && loginForm.hasError('required', 'password')" class="text-danger">*Password is required</small>
-                            <br>
+                           
+                            <!-- <br> -->
+
+                            <p style="text-align: right; color">
+                                <a routerLink = "/forget">Forgot Password</a>
+                            </p>
+                            
                             
                             <button [disabled]="loginForm.invalid"  type="submit" (click)="onLogin()" class="btn btn-success">Login</button>
                             <!-- <button [disabled]="loginForm.invalid" type="submit" class="button-87" role="button">Login</button> -->
@@ -33,9 +39,7 @@
                             <p style="color: black;">Dont have an account ?
                                 <a routerLink = "/register">Register here</a>                           
                             </p>
-                            <p>
-                                <a routerLink = "/forget">Forgot Password</a>
-                            </p>
+                           
                           
                     </form>
                     
