@@ -28,12 +28,12 @@
                            
                             <!-- <br> -->
 
-                            <p style="text-align: right; color">
-                                <a routerLink = "/forget">Forgot Password</a>
+                            <p style="color: coral; text-align: right; ">
+                                <a style="color:darkblue;" routerLink = "/forget" >Forgot Password</a>
                             </p>
                             
                             
-                            <button [disabled]="loginForm.invalid"  type="submit" (click)="onLogin()" class="btn btn-success">Login</button>
+                            <button [disabled]="loginForm.invalid"  type="submit" (click)="onLogin()" class="btn btn-success btn-block" style="width: 100%; border-radius: 13px;">Login</button>
                             <!-- <button [disabled]="loginForm.invalid" type="submit" class="button-87" role="button">Login</button> -->
                             <br>
                             <p style="color: black;">Dont have an account ?
