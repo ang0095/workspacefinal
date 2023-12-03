@@ -75,7 +75,7 @@
                             
                             <br>
                             
-                          <button type="submit" class="btn btn-success" style="border-radius: 13px;">Login</button>
+                          <button [disabled]="registerForm.invalid" type="submit" class="btn btn-warning" style="border-radius: 13px; color: white;">Register</button>
                           <!-- <button  type="submit" class="button-87" role="button">Register</button> -->
                           
                           <p style="color: black;">Already have an account ?
