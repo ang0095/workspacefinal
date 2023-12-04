@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Observable, scheduled } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'`
+  providedIn: 'root'
 })
 export class LoginService {
 
@@ -53,6 +53,11 @@ export class LoginService {
     return this.httpclient.get<any>(`${this.apiBaseurl}`)
   }
 
+  getUserRole()
+  {
+    
+  }
+
   // resetPassword(email: string, newPassword: string): Observable<any> {
   //   const resetPasswordData = { email, newPassword }; 
   //   return this.httpclient.put<any>(`${this.apiBaseurl}/resetpassword`, resetPasswordData, this.httpOptions);
@@ -96,9 +101,5 @@ export class LoginService {
   // {
   //   return this.httpclient.get<any>(`${LoginService['apiBaseUrl']}`)
   // }
-
-  
-
-  
 
 }
