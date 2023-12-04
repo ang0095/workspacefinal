@@ -1,6 +1,7 @@
 #container {
     width:100vw;
     height:100vh;
-    background-image: url(https://img.freepik.com/premium-vector/empty-black-color-studio-room-background-can-use-background-product-display_322958-1951.jpg);
+    background-image: url(https://img.freepik.com/free-photo/elevated-view-laptop-stationeries-yellow-backdrop_23-2147880496.jpg?w=826&t=st=1701712480~exp=1701713080~hmac=d99c78a0a4fff15d7c089dafeab4d465c6db29282f5c60acbc3ee3a83a2cb410);
     background-size:cover;
+    background-repeat : no-repeat;
 }
