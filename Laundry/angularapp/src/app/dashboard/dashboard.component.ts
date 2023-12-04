@@ -20,6 +20,8 @@ export class DashboardComponent implements OnInit {
   {
     this.http.getallUsers().subscribe(r => this.users=r)
   }
+
+  
   
 
   logout()
