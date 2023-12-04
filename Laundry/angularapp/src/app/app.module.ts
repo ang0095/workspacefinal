@@ -21,6 +21,7 @@ import { OffdashComponent } from './offdash/offdash.component';
 // import { NgToastModule } from 'ng-angular-popup';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomepageComponent } from './homepage/homepage.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -36,7 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DashboardComponent,
     StudashComponent,
     OffdashComponent,
-    ForgetpasswordComponent
+    ForgetpasswordComponent,
+    HomepageComponent
 
   ],
   imports: [

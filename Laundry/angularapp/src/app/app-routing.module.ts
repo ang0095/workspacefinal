@@ -10,6 +10,7 @@ import { OffdashComponent } from './offdash/offdash.component';
 import { OthGuard } from './guards/oth.guard';
 import { AOthGuard } from './guards/oth2.guard';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { HomepageComponent } from './homepage/homepage.component';
 // import { ResetComponent } from './reset/reset.component';
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path :'studash' , component: StudashComponent, canActivate:[OthGuard]},
   {path :'offdash' , component: OffdashComponent, canActivate:[AOthGuard]},
   {path :'forget' , component: ForgetpasswordComponent},
+  {path : 'homepage' , component: HomepageComponent},
   // {path :'reset' , component: ResetComponent},
 
 
