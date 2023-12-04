@@ -139,7 +139,6 @@ export class LoginComponent implements OnInit {
       },
       error:(err)=>{
         alert(err.error.message);
-        // this.toast.error({detail:'Success', summary:"Oops, Something went wrong", duration:5000});
 
       }
 
