@@ -6,6 +6,7 @@ import { LoginService } from '../capstoneservice/login.service';
 import { Router } from '@angular/router';
 import { User } from '../capmodels/user';
 import { ToastrService } from 'ngx-toastr';
+import { NgToastService } from 'ng-angular-popup';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   uname:any;            // holds the username
 
-  constructor(private fb:FormBuilder, private http:LoginService, private r:Router, private toastr:ToastrService) 
+  constructor(private fb:FormBuilder, private http:LoginService, private r:Router, private toast:NgToastService) 
   { 
     this.loginForm = this.fb.group({
       email:['',Validators.email],
@@ -80,9 +81,9 @@ export class LoginComponent implements OnInit {
       this.http.login(this.loginForm.value)       // calls login method from service to perform authentication
       .subscribe({
        next:(res)=> {
-        alert(res.message)
+        alert(res.message)  
 
-        this.toastr.success({detail:'Success', summary:res.message, duration:{timeOut:5000}});
+        this.toast.success({detail:'Success', summary:res.message, duration:5000});
         
         this.http.storeToken(res.token);
 
@@ -115,6 +116,8 @@ export class LoginComponent implements OnInit {
       },
       error:(err)=>{
         alert(err.error.message);
+        this.toast.error({detail:'Success', summary:"Oops, Something went wrong", duration:5000});
+
       }
 
       })

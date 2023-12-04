@@ -18,6 +18,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 import { StudashComponent } from './studash/studash.component';
 import { OffdashComponent } from './offdash/offdash.component';
 // import { ResetComponent } from './reset/reset.component';
+import { NgToastModule } from 'ng-angular-popup';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -46,6 +47,7 @@ import { ToastrModule } from 'ngx-toastr';
     RouterModule,
     FormsModule,
     BrowserAnimationsModule,
+    NgToastModule,
     ToastrModule.forRoot(),
   ],
   providers: [{
