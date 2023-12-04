@@ -81,6 +81,8 @@ export class LoginComponent implements OnInit {
       .subscribe({
        next:(res)=> {
         alert(res.message)
+
+        this.toastr.success({detail:'Success', summary:res.message, duration:{timeOut:5000}});
         
         this.http.storeToken(res.token);
 
