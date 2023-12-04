@@ -61,6 +61,22 @@ export class LoginComponent implements OnInit {
          // console.log("err1:"+roleValue)
         }
       )
+
+      //////////////////////////// changes 
+      // let userValue:any;
+      // this.http.getUserObj(this.loginForm.value.email)     // calls method from service to retrieve user name...
+      // .subscribe(
+      //   res=>{
+      //     userValue=res.username;
+      //     console.log("username1:"+roleValue)
+      //   },
+      //   err=>
+      //   {
+      //     roleValue=err;
+      //    // console.log("err1:"+roleValue)
+      //   }
+      // )
+
         let usernameValue:any;
       this.http.getUserObj(this.loginForm.value.email)
       .subscribe(

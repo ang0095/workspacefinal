@@ -19,6 +19,12 @@
 <button (click)="logout()" class="btn btn-warning">Logout</button>
 <button (click)="getallUsers()">Users</button>
 
+<br>
+<div *ngIf = "username">
+  <h3>Hello, {{ username }}!</h3>
+</div>
+<br>
+
 <div *ngIf="users.length >0">
   <h2>User List</h2>
   <ul>

@@ -9,19 +9,21 @@ import { LoginService } from '../capstoneservice/login.service';
 export class DashboardComponent implements OnInit {
 
   constructor(private http:LoginService) { }
-
+  username:string | null = null;
   users:any[] =[];
   ngOnInit(): void 
   {
-    
+    this.username = localStorage.getItem('keyUsername')
   }
+
+  
 
   getallUsers():void
   {
     this.http.getallUsers().subscribe(r => this.users=r)
   }
 
-  
+
   
 
   logout()
