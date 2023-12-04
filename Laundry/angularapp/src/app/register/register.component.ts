@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   registerForm:FormGroup;
-  registers:any;
+  registers:any;   // Holds data retrieved from the server
 
   constructor(private fb:FormBuilder, private http:LoginService, private routes:Router) 
   { 
@@ -35,8 +35,7 @@ export class RegisterComponent implements OnInit {
     const password = group.get('password').value;
     const confirmpass = group.get('cpassword').value;
      
-    return password === confirmpass ? null : {mismatch:true};
- 
+    return password === confirmpass ? null : {mismatch:true};       // returns null if they match or an object(mismatch:true) is they dont
   }
   
   isDropdownOpen : boolean = false;
@@ -49,20 +48,20 @@ export class RegisterComponent implements OnInit {
     this.isDropdownOpen = false;
   }
 
-  onRegister()
-  {
+  onRegister()                            // validates the registration form
+  {                                       // call register method from service to perform user registration
     if(this.registerForm.valid)
     {
       console.log("success");
       this.http.register(this.registerForm.value)
       .subscribe({
         next:(res =>{
-          alert(res.message)
+          alert(res.message)          //alerts user with a success message
           this.registerForm.reset();
           this.routes.navigate(['login']);
         }),
         error:(err =>{
-          alert(err?.error.message)
+          alert(err?.error.message)  // else alerts user with a error message
         })
       })
       // this.http.getCourses().subscribe(r => this.registers=r);

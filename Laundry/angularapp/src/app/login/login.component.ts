@@ -14,9 +14,9 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 })
 export class LoginComponent implements OnInit {
   loginForm:FormGroup;
-  logins:any;
+  logins:any;           // holds data retrived from thr server
 
-  uname:any;
+  uname:any;            // holds the username
 
   constructor(private fb:FormBuilder, private http:LoginService, private r:Router) 
   { 
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
       //redirect to courses page(get courses)
       console.log("success")
 
-      this.http.getUserObj(this.loginForm.value.email)
+      this.http.getUserObj(this.loginForm.value.email)     // calls method from service to retrieve user info...
       .subscribe(
         res=>{
           roleValue=res.role;
@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
 
       
 
-      this.http.login(this.loginForm.value)
+      this.http.login(this.loginForm.value)       // calls login method from service to perform authentication
       .subscribe({
        next:(res)=> {
         alert(res.message)
@@ -84,7 +84,7 @@ export class LoginComponent implements OnInit {
         this.http.storeToken(res.token);
 
         let keyRole: any;
-        localStorage.setItem("keyRole", roleValue);
+        localStorage.setItem("keyRole", roleValue);          // stores authentication token in local storage & navigates to different dahsboards based in user's role
         localStorage.setItem("keyUsername", usernameValue)
         // sessionStorage.setItem("keyRole", roleValue);
         
@@ -107,7 +107,7 @@ export class LoginComponent implements OnInit {
 	      }
         
         // console.log("Role="+roleValue)
-        this.loginForm.reset();
+        this.loginForm.reset();                 // resets login form
 
       },
       error:(err)=>{
