@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Observable, scheduled } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root'`
 })
 export class LoginService {
 
