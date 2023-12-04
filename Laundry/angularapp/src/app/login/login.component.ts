@@ -5,6 +5,7 @@ import {FormArray, FormControl, FormGroup, Validator} from '@angular/forms';
 import { LoginService } from '../capstoneservice/login.service';
 import { Router } from '@angular/router';
 import { User } from '../capmodels/user';
+import { ToastrService } from 'ngx-toastr';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   uname:any;            // holds the username
 
-  constructor(private fb:FormBuilder, private http:LoginService, private r:Router) 
+  constructor(private fb:FormBuilder, private http:LoginService, private r:Router, private toastr:ToastrService) 
   { 
     this.loginForm = this.fb.group({
       email:['',Validators.email],

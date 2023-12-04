@@ -19,6 +19,8 @@ import { StudashComponent } from './studash/studash.component';
 import { OffdashComponent } from './offdash/offdash.component';
 // import { ResetComponent } from './reset/reset.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS,
