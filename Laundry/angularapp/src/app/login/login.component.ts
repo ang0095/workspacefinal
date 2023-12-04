@@ -23,10 +23,17 @@ export class LoginComponent implements OnInit {
   constructor(private fb:FormBuilder, private http:LoginService, private r:Router) 
   { 
     this.loginForm = this.fb.group({
-      email:['',Validators.email],
+      email:['',Validators.required,this.emailValidator],
       password:['',Validators.required]
 
     })
+  }
+
+  emailValidator(control)
+  {
+    const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    return
+    emailPattern.test(control.value) ? null:{invalidEmail :true};
   }
   
   
