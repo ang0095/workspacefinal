@@ -15,7 +15,7 @@
                               <input formControlName="email" value="email" type="email" style="border-radius: 13px;" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
                             </div>
                             
-                            <small *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('email', 'email')" class="text-danger">* Enter valid Email</small>
+                            <small *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('invalidEmail', 'email')" class="text-danger">* Enter valid Email</small>
 
                             <div class="form-group">
                                

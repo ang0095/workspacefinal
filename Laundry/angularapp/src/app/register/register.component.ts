@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   { 
     this.registerForm = this.fb.group({
       userName:['',Validators.required],
-      email:['',Validators.email],
+      email:['',[Validators.required,this.emailValidator]],
       password:['',Validators.required],
       // mobileNumber:['',Validators.required],
       cpassword:['', Validators.required],
@@ -29,6 +29,14 @@ export class RegisterComponent implements OnInit {
     });
 
   }
+
+  emailValidator(control)
+  {
+    const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    return emailPattern.test(control.value) ? null:{invalidEmail :true};
+    
+  }
+  
 
   passwordMatch(group:FormGroup)
   {

@@ -21,7 +21,7 @@
                             <label for="email" style="color: black;"> &nbsp;Email</label>
                             <input formControlName="email" type="email" style="border-radius: 13px;" class="form-control" placeholder="Enter Email">
                           </div>
-                          <small *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('email', 'email')" class="text-danger">*Enter a valid email</small>
+                          <small *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('invalidEmail', 'email')" class="text-danger">*Enter a valid email</small>
   
                           
                           <div class="form-group"> 
